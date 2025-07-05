@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Doe Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+     a {
+      text-decoration: none;
+    }
+    .btn {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    /* Header */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 200px 20px ;
+      background-image: url(https://images.unsplash.com/photo-1745468504065-9a00f0844f97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lybCUyMHByb2ZpbGUlMjBpbiUyMGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D);
+      color: black;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      
+
+      
+    }
+    .hero h1  {
+      font-size: 2.5rem;
+      margin: 10px 0;
+      
+      
+    }
+
+    
+        .main-nav {
+      background-color: #f9f9f9;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .main-nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+    }
+    .main-nav li  {
+      cursor: pointer;
+    }
+    #image{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    .info-section {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 20px;
+    background: #fdfdfd;
+}
+.card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.card h3 {
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.card p {
+    margin-bottom: 15px;
+}
+.button-outline {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #f04a6e;
+    color: #f04a6e;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.info-list {
+    list-style: none;
+    padding-left: 0;
+}
+.info-list li {
+    margin: 8px 0;
+}
+
+
+#resume h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#resume h2 span {
+  color: #e91e63;
+}
+
+.resume-row {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+}
+
+.resume-card {
+  flex: 1 1 100px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+ margin-left: 20px;
+ margin-right: px;
+}
+
+.resume-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e91e63;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.resume-card .date {
+  color: #e91e63;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.resume-card .position {
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.resume-card .desc {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #ff4d6d;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+.w-95 { width: 95%; }
+.w-85 { width: 85%; }
+.w-75 { width: 75%; }
+.w-70 { width: 70%; }
+
+
+@media (max-width: 768px) {
+  .resume-row {
+    flex-direction: column;
+  }
+}
+
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 20px;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #e91e63;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+        .portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+ h2{
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.portfolio-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-left: 20px;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  
+}
+
+.portfolio-card h3 {
+  
+  margin-bottom: 10px;
+  
+}
+
+.portfolio-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+ .btn {
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 16px 25px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #e43c5f;
+}
+
+.btn-outline {
+  background-color: #ff4d6d;
+  color: white;
+  border:none;
+  padding: 16px 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+  height: 60px;
+  margin-top: 15px;
+}
+
+.btn-outline:hover {
+  background-color: #ff4d6d;
+  
+}
+
+
+
+    footer {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    
+   #services {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#services h2 span {
+  color: #ff4d6d;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+      
+    
+    
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h4>Hello, I am</h4>
+      <h1>POOJA</h1>
+      <p>Web Designer & Developer</p>
+      <a href="#resume" class="btn">Print Resume</a>
+    </div>
+    
+  </header>
+
+  <nav class="main-nav">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+     <main class="info-section">
+        <div class="card whoami">
+            <h2>Who am I ?</h2>
+            <h3>A Web Designer / Developer </h3>
+            <p>Hi, I'm Pooja Ak, a passionate and detail-oriented web developer with a strong foundation in HTML, CSS, and modern front-end design. I enjoy creating clean, responsive, and user-friendly websites that bring ideas to life.</p>
+            <a href="#" class="button-outline">Download My CV</a>
+        </div>
+
+        <div class="card personal">
+            
+            <h2>Personal Info</h2>
+            <ul class="info-list">
+                <li><strong>Birthdate:</strong> 16/02/2006</li>
+                <li><strong>Email:</strong> info@website.com</li>
+                <li><strong>Phone:</strong> (123) 456-7890</li>
+                <li><strong>Skype:</strong> pooja_ak</li>
+                <li><strong>Address:</strong> vaniyambadi,Tirupattur dist</li>
+            </ul>
+
+        </div>
+
+        <div class="card expertise">
+          <h2>My Expertise</h2>
+          <p>I specialize in front-end web development with a strong focus on clean, responsive, and user-friendly design. My goal is to build websites that are both visually appealing and functionally solid — using only HTML and CSS.</p>
+        </div>
+    </main>
+
+<section id="resume">
+  <h2><span>My</span> Resume</h2>
+
+  <div class="resume-row">
+    <!-- Expertise -->
+    <div class="resume-card">
+      <h3>HSE+2 GRAGE</h3>
+      <p class="date">2022 - 2023</p>
+      
+      <p class="desc">
+  I completed higher secondary education in st pauls higher secondary school  in vaniyambi I score 70% in +2     </p>
+    </div>
+
+    <!-- Education -->
+    <div class="resume-card">
+      <h3>Degree</h3>
+      <h3>Marudhur Kesari Jain College For Women In Vaniyambai </h3>
+      <p class="date">2023- 2026</p>
+      <p class="position">BCA, Computer Application</p>
+      <p class="desc">
+      Currently pursuing my undergraduate degree in Computer Applications with a focus on web development, database management, and software programming.      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="resume-card skills">
+      <h3>Skills</h3>
+      <div class="skill">
+        <p>HTML & CSS</p>
+        <div class="bar"><div class="fill w-95"></div></div>
+      </div>
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="bar"><div class="fill w-85"></div></div>
+      </div>
+      <div class="skill">
+        <p>PHP</p>
+        <div class="bar"><div class="fill w-75"></div></div>
+      </div>
+      <div class="skill">
+        <p>SQL</p>
+        <div class="bar"><div class="fill w-70"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>My <span>Services</span></h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>I create responsive and attractive website layouts using clean HTML5 and CSS3. Focused on accessibility, UX, and UI principles.</p>
+    </div>
+    <div class="card">
+      <h3>Front-End Development</h3>
+      <p>Experienced in building fully responsive websites using HTML, CSS, and JavaScript. Skilled in converting designs into code.</p>
+    </div>
+    <div class="card">
+      <h3>Back-End Integration</h3>
+      <p>Basic PHP and MySQL knowledge to support full-stack web functionality. Capable of building form processing and simple authentication.</p>
+    </div>
+    <div class="card">
+      <h3>Portfolio & Personal Sites</h3>
+      <p>Developing fast-loading, mobile-first portfolio or personal websites that showcase your skills and projects effectively.</p>
+    </div>
+    <div class="card">
+      <h3>PSD/Figma to HTML</h3>
+      <p>Convert static designs into pixel-perfect HTML/CSS websites with full browser support and responsiveness.</p>
+    </div>
+    <div class="card">
+      <h3>Website Redesign</h3>
+      <p>Improve old or non-responsive websites by rebuilding them with modern HTML/CSS layout techniques and clean design.</p>
+    </div>
+  </div>
+</section>
+
+
+    <section id="portfolio">
+  <h2>My Portfolio</h2>
+  <div class="portfolio-cards">
+    <div class="portfolio-card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.YuQDEJ-qPbSSD-ugzRUslgEzDL?pid=Api&P=0&h=180" alt="Project 1">
+      <h3>Project One</h3>
+      <p>A card project built with HTML, CSS.</p>
+      <div class="card-links">
+        <a href="https://github.com/Pooja123220/cards" target="_blank" class="btn-outline">GitHub</a>
+        <a href="https://pooja-cards.netlify.app/" target="_blank" class="btn">Live</a>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.ialMeSLi4JycU9uamLWbIAHaHa?pid=Api&P=0&h=180" alt="Project 2">
+      <h3>Project Two</h3>
+      <p>A design project with modern Register Form</p>
+      <div class="card-links">
+        <a href="https://github.com/Pooja123220/register-form" target="_blank" class="btn-outline">GitHub</a>
+        <a href="https://pooja-register-form.netlify.app/" target="_blank" class="btn">Live</a>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.3Zbzv1Y07rojlZfUMyGl-QHaE8?pid=Api&P=0&h=180" alt="Project 3">
+      <h3>Project Three</h3>
+      <p>Responsive website built for a portfolio showcase.</p>
+      <div class="card-links">
+        <a href="https://github.com/Pooja123220/poojaweb" target="_blank" class="btn-outline">GitHub</a>
+        <a href="https://pooja-cafe.netlify.app/" target="_blank" class="btn">Live</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="email" name="email" placeholder="Your Email">
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pooja. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+
